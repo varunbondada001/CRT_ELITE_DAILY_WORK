@@ -1,0 +1,27 @@
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        ArrayList<Integer> result = new ArrayList<>();
+        if(root==null)
+            return null;
+        //TreeNode temp = root;
+        while(root!=null){
+        //if root is val
+            if(root.val == val){
+                return root;
+            }
+            //right
+            if(root.val<=val){
+                root = root.right;
+            }
+            //Dont keep if here null error occurs
+            //left
+            else{
+                root = root.left;
+            }
+        }
+
+
+            
+        return null;
+    }
+}
