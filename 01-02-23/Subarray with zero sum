@@ -1,0 +1,41 @@
+import java.util.* ;
+
+import java.io.*;
+
+public class Solution {
+
+public static int countSubarrays(int n, int[] arr) {
+
+// Write your code here.
+
+int c =0;
+
+int sum1 = 0;
+
+HashMap<Integer,Integer> mp = new HashMap<>();
+
+mp.put(0,1);
+
+for(int i=0;i<arr.length;i++){
+
+sum1+=arr[i];
+
+if(mp.containsKey(sum1)){
+
+c+= mp.get(sum1);
+
+mp.put(sum1,mp.get(sum1)+1);
+
+}else{
+
+mp.put(sum1,1);
+
+}
+
+}
+
+return c;
+
+}
+
+}
