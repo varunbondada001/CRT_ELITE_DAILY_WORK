@@ -1,0 +1,26 @@
+class Result {
+
+    /*
+     * Complete the 'pangrams' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static String pangrams(String s) {
+    // Write your code here
+    String temp = s.toLowerCase();
+    temp = temp.replaceAll("\\s", "");
+    char ch[] = temp.toCharArray();
+    HashSet<Character> hs = new HashSet<>();
+    for(char x:ch){
+        hs.add(x);
+        //System.out.print(hs.size());
+    }
+    if(hs.size()==26)
+        return "pangram";
+    else
+        return "not pangram";
+    }
+
+}
