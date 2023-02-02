@@ -1,0 +1,20 @@
+class Result {
+
+    public static String timeConversion(String s) {
+    // Write your code here
+    int len = s.length();
+        if(s.charAt(len-2)=='A'){
+            if(s.substring(0,2).equals("12"))
+        return "00"+s.substring(2,len-2);
+        }
+        else{
+            int n = Integer.parseInt(s.substring(0,2));
+            if(!s.substring(0,2).equals("12"))
+            
+        return (n+12 +s.substring (2,len-2));
+            }
+
+            return s.substring(0, len-2);
+    }
+
+}
