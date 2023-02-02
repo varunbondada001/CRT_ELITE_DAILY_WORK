@@ -1,0 +1,17 @@
+   public static int diagonalDifference(List<List<Integer>> arr) {
+    // Write your code here
+    int left = 0;
+    int right= 0;
+    int j = 0;
+    List<Integer> siz =new ArrayList<>(arr.get(0));
+    for(int i=0;i<siz.size();i++){
+         left+=arr.get(i).get(j);
+         int t = siz.size()-1;
+         right+=arr.get(i).get(t-j);
+        j++;
+    }
+    return Math.abs(right-left);
+
+    }
+
+}
