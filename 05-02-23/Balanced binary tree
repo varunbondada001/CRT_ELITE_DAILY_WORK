@@ -1,0 +1,19 @@
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+       return height(root)!=-1;
+
+    }
+    public int height(TreeNode root){
+        if(root==null)  
+            return 0;
+        //CHECKS FOR THE LEFT TREE FIRST GOES TO ROOT
+        int left = height(root.left);
+        if(left==-1) return -1;
+        int right = height(root.right);
+        //CHECKS FOR RIGHT SUBTREE
+        if(right==-1) return -1;
+        //IF DIFFERENCE MORE THAN 1 RETURN -1
+        if (Math.abs(left-right)>1) return -1;
+        return Math.max(left,right)+1;
+    }
+}
