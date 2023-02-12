@@ -1,56 +1,26 @@
 import java.util.* ;
-
 import java.io.*;
-
 import java.util.* ;
-
 import java.io.*;
-
 import java.util.ArrayList;
-
 public class Solution {
-
-public static int LongestSubsetWithZeroSum(ArrayList<Integer> arr) {
-
-// Write your code here.
-
-HashMap<Integer,Integer> mp = new HashMap<>();
-
-int sum = 0;
-
-int maxSum = 0;
-
-for(int i=0;i<arr.size();i++){
-
-sum+=arr.get(i);
-
-if(sum==0){
-
-maxSum = i+1;
-
-}
-
-else{
-
-if(mp.containsKey(sum)){
-
-maxSum = Math.max(maxSum, i-mp.get(sum));
-
-}
-
-if(!mp.containsKey(sum)){
-
-mp.put(sum,i);
-
-}
-
-}
-
-}
-
-return maxSum;
-
-}
-
+  public static int LongestSubsetWithZeroSum(ArrayList<Integer> arr) {
+      HashMap<Integer,Integer> mp = new HashMap<>();
+      int sum = 0;
+      int maxSum = 0;
+      for(int i=0;i<arr.size();i++){
+        sum+=arr.get(i);
+        if(sum==0){
+          maxSum = i+1;
+        }else{
+          if(mp.containsKey(sum)){
+            maxSum = Math.max(maxSum, i-mp.get(sum));
+        }if(!mp.containsKey(sum)){
+            mp.put(sum,i);
+         }
+        }
+      }
+  return maxSum;
+  }
 }
 
